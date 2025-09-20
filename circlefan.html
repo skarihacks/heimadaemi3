@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script id="vertex-shader" type="x-shader/x-vertex">
+
+attribute vec4 vPosition;
+uniform float time;
+
+void main()
+{
+    float stretch = 0.3 * sin(time * 0.002); 
+    vec4 pos = vPosition;
+
+    pos.y = pos.y * (1.0 + stretch);
+
+    gl_Position = pos;
+}
+</script>
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+
+void main()
+{
+    gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+}
+</script>
+
+<script type="text/javascript" src="circlefan_files/webgl-utils.js"></script>
+<script type="text/javascript" src="circlefan_files/initShaders.js"></script>
+<script type="text/javascript" src="circlefan_files/MV.js"></script>
+<script type="text/javascript" src="circlefan_files/circlefan.js"></script>
+
+</head><body>
+<canvas id="gl-canvas" width="512" height="512">&gt;
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+
+
+</body></html>
